@@ -1,1 +1,1 @@
-# mcp_fastmcp_course
+# Context Editor
