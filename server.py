@@ -28,7 +28,9 @@ mcp = FastMCP("Context Editor")
 #
 # .resolve() converts the path into a canonical absolute path.
 # This also gives us a stable path to use for security checks below.
-PROJECT_ROOT = (Path(__file__).resolve().parent / "project").resolve()
+
+PROJECT_ROOT = (Path(__file__).resolve().parent.parent / "tassiaqca").resolve()
+
 
 # 3. Define files and directories that the MCP server must not expose.
 #
@@ -339,6 +341,6 @@ def overwrite_project_file(file_path: str, content: str) -> str:
 # stdio is commonly used for locally running MCP servers because the
 # MCP host launches the server process and communicates with it directly.
 
-# mcp.run(transport="stdio")
 if __name__ == "__main__":
-    mcp.run(transport="http", host="0.0.0.0", port=8000)
+    mcp.run(transport="stdio")
+    # mcp.run(transport="http", host="0.0.0.0", port=8000)
